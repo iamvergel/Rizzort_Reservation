@@ -1,0 +1,224 @@
+$Color001: #fff;
+$Color002: #1b2f46;
+$Color003: #94c2fa;
+
+$Transition: 0.3s;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: $Color001;
+}
+
+.navbar {
+  height: 80px;
+  background-color: $Color002;
+  z-index: 10;
+  animation: nav 0.3s ease-in;
+
+  @keyframes nav {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 80px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $Color002;
+    opacity: 0.6;
+  }
+
+  button {
+    position: absolute;
+    left: 1%;
+    bottom: 15%;
+    width: 150px;
+    background-color: transparent;
+    color: $Color001;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $Color002;
+      color: $Color001;
+    }
+
+    @media (max-width: 768px) {
+      right: 20px;
+    }
+
+    i {
+      font-family: 700;
+    }
+  }
+}
+
+.image {
+  background-color: $Color001;
+  width: 100%;
+  height: calc(100% - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+
+  .table {
+    background-color: $Color001;
+    width: 60%;
+    height: 100%;
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    animation: content 0.3s ease-in;
+
+    .table1 {
+      width: 90%;
+      height: 90%;
+      background: $Color001;
+      border: none;
+      overflow-y: scroll;
+      overflow-x: scroll;
+      background-color: #4778b327;
+      cursor: default;
+
+      table {
+        width: 100%;
+        border-spacing: 0;
+        background-color: #4778b34d;
+
+        tr {
+          color: #4778b3;
+
+          &:hover {
+            background-color: #4778b34d;
+            color: #fff;
+          }
+          th {
+            background-color: #4778b380;
+            padding-left: 3rem;
+            padding-right: 3rem;
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+            color: $Color001;
+            font-size: 12px;
+            font-weight: 500;
+            text-align: center;
+            border: 1px solid #4778b3;
+            letter-spacing: 1px;
+          }
+
+          td {
+            background-color: #4778b327;
+            border-bottom: 1px solid #4778b34d;
+            font-size: 12px;
+            text-align: center;
+            font-weight: 400;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .form {
+    background-color: $Color001;
+    width: 40%;
+    height: 100%;
+    border-radius: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    form {
+      width: 90%;
+      height: 90%;
+      background-color: #4778b380;
+      border-radius: 10px;
+      padding: 20px;
+      overflow: hidden;
+      overflow-y: scroll;
+
+      .form-group {
+        padding: 10px;
+
+        label {
+          color: #4778b3;
+          font-size: 15px;
+          margin-bottom: 2px;
+          font-weight: 600;
+        }
+
+        input,
+        select {
+          color: #4778b3;
+          height: 40px;
+          font-size: 12px;
+
+          @media (min-width: 992px) {
+            height: 30px;
+          }
+
+          @media (min-width: 1200px) {
+            height: 40px;
+          }
+        }
+      }
+
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button:nth-child(1) {
+          background-color: #4778b3;
+          color: $Color001;
+
+          &:hover {
+            background-color: $Color002;
+            color: $Color001;
+          }
+        }
+
+        button:nth-child(2) {
+          background-color: $Color002;
+          color: $Color001;
+
+          &:hover {
+            background-color: #4778b3;
+            color: $Color001;
+          }
+        }
+      }
+    }
+  }
+}

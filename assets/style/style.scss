@@ -1,0 +1,289 @@
+$Color001: #fff;
+$Color002: #1b2f46;
+$Color003: #94c2fa;
+
+$Transition: 0.3s;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: $Color001;
+}
+
+.navbar {
+  height: 80px;
+  background-color: transparent;
+  z-index: 10;
+  animation: nav 0.3s ease-in;
+
+  @keyframes nav {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 80px;
+    }
+  }
+
+  .navbar-brand {
+    color: $Color001;
+    letter-spacing: 5px;
+    font-size: 15px;
+    border-bottom: 2px solid $Color001;
+    border-top: 2px solid $Color001;
+    transition: all $Transition ease-out;
+
+    &:hover {
+      color: $Color003;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 5%;
+    width: 200px;
+    background-color: #1b2f466c;
+    color: $Color001;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500;
+    border: 1px solid $Color001;
+
+    &:hover {
+      background-color: $Color003;
+      color: $Color001;
+      border: 1px solid $Color001;
+    }
+
+    @media (max-width: 768px) {
+      right: 20px;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: contrast(80%);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $Color002;
+    opacity: 0.5;
+  }
+
+  .content {
+    width: 40%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+    border-radius: 0;
+    position: absolute;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    animation: content 0.3s ease-in;
+
+    @keyframes content {
+      from {
+        left: -40%;
+      }
+      to {
+        left: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      width: 80%;
+      height: 80%;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .logo {
+      z-index: 1;
+      color: $Color001;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      text-shadow: 0 4px 4px #000000af;
+    }
+
+    p {
+      width: 90%;
+      color: $Color001;
+      padding: 1rem;
+      letter-spacing: 2px;
+      text-align: justify;
+      font-size: 12px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.carousel {
+  position: absolute;
+  z-index: 1;
+  width: 60%;
+  height: 100%;
+  right: 5%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: caro 0.5s ease-in;
+
+  @keyframes caro {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  .carousel-inner {
+    height: 50%;
+    width: 80%;
+    border-radius: 20px;
+    border: 2px solid $Color001;
+
+    .carousel-item {
+      height: 100%;
+      background-color: #000;
+
+      img {
+        opacity: 0.8;
+        object-fit: cover;
+        height: 100%;
+      }
+
+      .overlay-image {
+        height: 50%;
+        width: 100%;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        z-index: 5;
+        position: absolute;
+        bottom: 0;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.modal {
+  .modal-dialog {
+    .modal-content {
+      background-color: $Color001;
+
+      .modal-header {
+        background-color: $Color003;
+
+        .modal-title {
+          color: $Color001;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          font-weight: 700;
+        }
+
+        button {
+          color: $Color002;
+          background-color: $Color003;
+          border: 0;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+        }
+      }
+
+      form {
+        .modal-body {
+          input,
+          select {
+            background-color: #94c2fa38;
+            color: $Color002;
+            letter-spacing: 1px;
+            font-size: 12px;
+            height: 40px;
+            border: 1px solid $Color002;
+            border-radius: 0;
+            text-transform: capitalize;
+          }
+
+          label {
+            color: $Color002;
+            letter-spacing: 1px;
+            font-size: 12px;
+          }
+        }
+
+        .modal-footer {
+          background-color: $Color003;
+
+          .btn-secondary {
+            background-color: $Color002;
+            border: none;
+
+            &:hover {
+              background-color: #1b2f4685;
+              color: $Color001;
+            }
+          }
+
+          .btn-primary {
+            background-color: $Color003;
+            border: 1px solid $Color002;
+            color: $Color002;
+
+            &:hover {
+              background-color: #1b2f4685;
+              color: $Color001;
+            }
+          }
+        }
+      }
+    }
+  }
+}
